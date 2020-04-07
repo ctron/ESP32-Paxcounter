@@ -22,6 +22,12 @@ void doHousekeeping() {
 
   // update uptime counter
   uptime();
+#if (CYCLIC_UPDATE_CHECK>0)
+  if (uptime() > (CYCLIC_UPDATE_CHECK*1000)) {
+    ESP_LOGW(TAG, "Cyclic update check triggered after %d seconds", CYCLIC_UPDATE_CHECK);
+    RTC_runmode = RUNMODE_UPDATE;
+  }
+#endif
   // check if update mode trigger switch was set
   if (RTC_runmode == RUNMODE_UPDATE) {
     // check battery status if we can before doing ota

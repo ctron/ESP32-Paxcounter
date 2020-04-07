@@ -103,6 +103,10 @@ env.Append(BUILD_FLAGS=[
     u'-DBINTRAY_USER=\\"' + mykeys["BINTRAY_USER"] + '\\"', 
     u'-DBINTRAY_REPO=\\"' + mykeys["BINTRAY_REPO"] + '\\"', 
     u'-DBINTRAY_PACKAGE=\\"' + package + '\\"',
+    u'-DHAWKBIT_URL=\\"' + mykeys["HAWKBIT_URL"] + '\\"', 
+    u'-DHAWKBIT_TENANT=\\"' + mykeys["HAWKBIT_TENANT"] + '\\"', 
+    u'-DHAWKBIT_DEVICE_ID=\\"' + mykeys["HAWKBIT_DEVICE_ID"] + '\\"',
+    u'-DHAWKBIT_DEVICE_TOKEN=\\"' + mykeys["HAWKBIT_DEVICE_TOKEN"] + '\\"',
     u'-DARDUINO_LMIC_PROJECT_CONFIG_H=' + lmicconfig,
     u'-I \"' + srcdir + '\"'
     ])
